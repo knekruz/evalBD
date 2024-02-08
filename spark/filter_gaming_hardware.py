@@ -58,13 +58,15 @@ if not path_exists(hdfs_base_path + file_path):
 # Read the CSV file with explicit schema
 df = spark.read.csv(hdfs_base_path + file_path, header=True, schema=schema)
 
-# Filter for 'Game Hardware' category and validate required fields
+# Filter for 'Game Hardware' category, validate required fields, and exclude items with price at 0.0
 filtered_df = df.filter(
     (col("categoryName") == "Game Hardware") &
     col("asin").isNotNull() & col("title").isNotNull() &
     (col("stars") >= 0) & (col("reviews") >= 0) &
-    (col("price") >= 0) & (col("boughtInLastMonth") >= 0)
+    (col("price") > 0) &  # Exclude products with a price of 0.0
+    (col("boughtInLastMonth") >= 0)
 )
+
 
 # Path for saving the data
 save_path = f"{hdfs_base_path}/user/hadoop/amazon/categories/Game_Hardware"

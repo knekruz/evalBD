@@ -63,7 +63,8 @@ filtered_df = df.filter(
     (col("categoryName") == "Golf Equipment") &
     col("asin").isNotNull() & col("title").isNotNull() &
     (col("stars") >= 0) & (col("reviews") >= 0) &
-    (col("price") >= 0) & (col("boughtInLastMonth") >= 0)
+    (col("price") > 0) &  # Exclude products with a price of 0.0
+    (col("boughtInLastMonth") >= 0)
 )
 
 # Path for saving the data
