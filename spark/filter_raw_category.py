@@ -75,9 +75,9 @@ if not path_exists(hdfs_base_path + file_path):
     spark.stop()
     exit()
 
-# Process each category
-filter_and_save_category_data("Game Hardware")
-filter_and_save_category_data("Golf Equipment")
+# Dynamically process categories based on the folders available
+for category_name in ["Game Hardware", "Golf Equipment"]:
+    filter_and_save_category_data(category_name)
 
 # Stop Spark Session
 spark.stop()
