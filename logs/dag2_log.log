@@ -1,0 +1,35 @@
+ubuntu.ubuntu.virtualbox.org
+*** Found local files:
+***   * /home/hadoop/airflow/logs/dag_id=dag2/run_id=manual__2024-02-08T12:00:38.768836+00:00/task_id=filter_raw_category/attempt=1.log
+[2024-02-08, 12:00:40 UTC] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag2.filter_raw_category manual__2024-02-08T12:00:38.768836+00:00 [queued]>
+[2024-02-08, 12:00:40 UTC] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag2.filter_raw_category manual__2024-02-08T12:00:38.768836+00:00 [queued]>
+[2024-02-08, 12:00:40 UTC] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-02-08, 12:00:40 UTC] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): filter_raw_category> on 2024-02-08 12:00:38.768836+00:00
+[2024-02-08, 12:00:40 UTC] {standard_task_runner.py:60} INFO - Started process 33193 to run task
+[2024-02-08, 12:00:40 UTC] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'dag2', 'filter_raw_category', 'manual__2024-02-08T12:00:38.768836+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/dag2.py', '--cfg-path', '/tmp/tmpwzxen4dw']
+[2024-02-08, 12:00:40 UTC] {standard_task_runner.py:88} INFO - Job 10: Subtask filter_raw_category
+[2024-02-08, 12:00:40 UTC] {task_command.py:423} INFO - Running <TaskInstance: dag2.filter_raw_category manual__2024-02-08T12:00:38.768836+00:00 [running]> on host ubuntu.ubuntu.virtualbox.org
+[2024-02-08, 12:00:40 UTC] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag2' AIRFLOW_CTX_TASK_ID='filter_raw_category' AIRFLOW_CTX_EXECUTION_DATE='2024-02-08T12:00:38.768836+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-08T12:00:38.768836+00:00'
+[2024-02-08, 12:00:40 UTC] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-08, 12:00:40 UTC] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/hadoop/Bureau/ECBD/spark/filter_raw_category.py']
+[2024-02-08, 12:00:40 UTC] {subprocess.py:86} INFO - Output:
+[2024-02-08, 12:00:41 UTC] {subprocess.py:93} INFO - 24/02/08 13:00:41 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2024-02-08, 12:00:41 UTC] {subprocess.py:93} INFO - 24/02/08 13:00:41 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2024-02-08, 12:00:42 UTC] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-02-08, 12:00:42 UTC] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-02-08, 12:00:42 UTC] {subprocess.py:93} INFO - 24/02/08 13:00:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-02-08, 12:00:55 UTC] {subprocess.py:93} INFO - 
+[Stage 0:>                                                          (0 + 6) / 6]
+[Stage 0:=======================================>                   (4 + 2) / 6]
+                                                                                
+[Stage 1:>                                                          (0 + 6) / 6]
+[Stage 1:=========>                                                 (1 + 5) / 6]
+[Stage 1:=======================================>                   (4 + 2) / 6]
+[Stage 1:=================================================>         (5 + 1) / 6]
+                                                                                
+Filtered data for Game Hardware saved successfully with headers at: hdfs://localhost:9000/user/hadoop/amazon/categories/Game_Hardware
+[2024-02-08, 12:00:55 UTC] {subprocess.py:93} INFO - Filtered data for Golf Equipment saved successfully with headers at: hdfs://localhost:9000/user/hadoop/amazon/categories/Golf_Equipment
+[2024-02-08, 12:00:55 UTC] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-08, 12:00:55 UTC] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dag2, task_id=filter_raw_category, execution_date=20240208T120038, start_date=20240208T120040, end_date=20240208T120055
+[2024-02-08, 12:00:55 UTC] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-08, 12:00:55 UTC] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

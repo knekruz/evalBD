@@ -1,4 +1,4 @@
-# EVALUATION IG DATA
+# EVALUATION BIG DATA
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
@@ -102,19 +102,16 @@ Je conseille de démarrer le projet sur la session hadoop car c'est la que je l'
 
 Pour démarrer le projet il faut d'abord:
 - Créer un dossier /home/hadoop/Bureau/ECBD ou bien extraire mon dossier projet sur le bureau avec le nom du dossier "ECBD"
+- Créer un dossier /home/hadoop/Bureau/raw ( pour permettre au fetch d'extraire les donnée raw, et les deplacer ensuite dans hdfs)
 - Faire le HDFS start
 - Modifier le airflow.cfg pour pointer vers mon dossier dags du projet exemple pour moi : dags_folder = /home/hadoop/Bureau/ECBD/dags
 - Faire le Airflow start
-- Dépondant de votre session il faudra sois move mes credetials d'api kaggle qui sont dasn mon dossier projet/data soit en faire pour vous et deplacer le kaggle.json vers /home/hadoop/.kaggle/ (modifier hadoop si ce n'est pas votre session)
+- Dépondant de votre session il faudra sois move mes credetials d'api kaggle qui sont dans mon dossier projet/data soit en faire pour vous et deplacer le kaggle.json vers /home/hadoop/.kaggle/ (modifier hadoop si ce n'est pas votre session)
 - Ensuite quand c'est fait vous pouvez vous connecter sur airflow et lancer manuellement (ou bien attendre l'interval d'un an, oui ç fait beaucoup mais le data sur kaggle se met a jour tous les ans malheureusement) le dag1 qui va automatiquement trigger les autres dags si il est en succes.
 
 ## Fabriqué avec
 
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
-
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
+Amour, et surtout python, pyspark,dag airflow et des commandes hdfs.
 
 ## Contributing
 

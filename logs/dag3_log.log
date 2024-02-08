@@ -1,0 +1,49 @@
+ubuntu.ubuntu.virtualbox.org
+*** Found local files:
+***   * /home/hadoop/airflow/logs/dag_id=dag3/run_id=manual__2024-02-08T12:00:57.607739+00:00/task_id=enrich_category/attempt=1.log
+[2024-02-08, 12:01:00 UTC] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag3.enrich_category manual__2024-02-08T12:00:57.607739+00:00 [queued]>
+[2024-02-08, 12:01:00 UTC] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag3.enrich_category manual__2024-02-08T12:00:57.607739+00:00 [queued]>
+[2024-02-08, 12:01:00 UTC] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-02-08, 12:01:00 UTC] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): enrich_category> on 2024-02-08 12:00:57.607739+00:00
+[2024-02-08, 12:01:00 UTC] {standard_task_runner.py:60} INFO - Started process 33495 to run task
+[2024-02-08, 12:01:00 UTC] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'dag3', 'enrich_category', 'manual__2024-02-08T12:00:57.607739+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag3.py', '--cfg-path', '/tmp/tmptb15kdhy']
+[2024-02-08, 12:01:00 UTC] {standard_task_runner.py:88} INFO - Job 12: Subtask enrich_category
+[2024-02-08, 12:01:00 UTC] {task_command.py:423} INFO - Running <TaskInstance: dag3.enrich_category manual__2024-02-08T12:00:57.607739+00:00 [running]> on host ubuntu.ubuntu.virtualbox.org
+[2024-02-08, 12:01:00 UTC] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag3' AIRFLOW_CTX_TASK_ID='enrich_category' AIRFLOW_CTX_EXECUTION_DATE='2024-02-08T12:00:57.607739+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-08T12:00:57.607739+00:00'
+[2024-02-08, 12:01:00 UTC] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-08, 12:01:00 UTC] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/hadoop/Bureau/ECBD/spark/enrich_category.py']
+[2024-02-08, 12:01:00 UTC] {subprocess.py:86} INFO - Output:
+[2024-02-08, 12:01:01 UTC] {subprocess.py:93} INFO - 24/02/08 13:01:01 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2024-02-08, 12:01:01 UTC] {subprocess.py:93} INFO - 24/02/08 13:01:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2024-02-08, 12:01:01 UTC] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-02-08, 12:01:01 UTC] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-02-08, 12:01:01 UTC] {subprocess.py:93} INFO - 24/02/08 13:01:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - 
+[Stage 10:>                                                         (0 + 1) / 1]
+                                                                                
+Running system command: hdfs dfsadmin -report
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - HDFS is running.
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -ls hdfs://localhost:9000/user/hadoop/amazon/categories/
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Top100_seller
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Top100_seller
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Top100_reviews
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Top100_reviews
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Best_investments
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Game_Hardware/Best_investments
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Enriched data saved successfully for Game Hardware.
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -ls hdfs://localhost:9000/user/hadoop/amazon/categories/
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Top100_seller
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Top100_seller
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Top100_reviews
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Top100_reviews
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Running system command: hdfs dfs -test -e hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Best_investments
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Directory already exists: hdfs://localhost:9000/user/hadoop/amazon/enriched_categories/Golf_Equipment/Best_investments
+[2024-02-08, 12:01:26 UTC] {subprocess.py:93} INFO - Enriched data saved successfully for Golf Equipment.
+[2024-02-08, 12:01:27 UTC] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-08, 12:01:27 UTC] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dag3, task_id=enrich_category, execution_date=20240208T120057, start_date=20240208T120100, end_date=20240208T120127
+[2024-02-08, 12:01:27 UTC] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-08, 12:01:27 UTC] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

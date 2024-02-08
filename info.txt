@@ -11,6 +11,13 @@ pyspark versio:
 pip install pyspark==3.3.4
 
 
+
+hdfs dfs -copyToLocal /user/hadoop/amazon/enriched_categories/Game_Hardware/Top100_seller/part-00000-9683890d-a4a8-40f2-a001-9e7d534993eb-c000.csv /home/hadoop/Bureau/
+
+hdfs dfs -copyToLocal /user/hadoop/amazon/enriched_categories/Golf_Equipment/Top100_seller/part-00000-68a2d22e-0d2e-4b1e-994e-cecbe79a0a52-c000.csv /home/hadoop/Bureau/
+
+
+
 check port:
 netstat -tuln | grep 9000
 
