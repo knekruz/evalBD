@@ -84,9 +84,21 @@ hadoop fs -rm -r /user/hadoop/weather/raw
 hadoop fs -rm /user/hadoop/data/example.txt
 
 
+boughtInLastMonth
+
+
 hdfs_base_path = "hdfs://localhost:9000"  # HDFS base path
 
 1. L’application utilise aussi des opérations de grouping ou de window functions
 2. L’application utilise une requête SQL pour obtenir un résultat OR L’application utilise une user-defined function ou une expression en SQL
 
+Game Hardware
+Golf Equipment
+
+pip install kaggle
+
+hadoop@ubuntu:~$ mv /home/hadoop/Bureau/ECBD/data/kaggle.json /home/hadoop/.kaggle/
+hadoop@ubuntu:~$ ls -l /home/hadoop/.kaggle/
+total 4
+-rw-rw-r-- 1 hadoop hadoop 64 févr.  8 11:27 kaggle.json
 
