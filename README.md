@@ -107,7 +107,7 @@ Pour démarrer le projet il faut d'abord:
 - Modifier le airflow.cfg pour pointer vers mon dossier dags du projet exemple pour moi : dags_folder = /home/hadoop/Bureau/ECBD/dags
 - Faire le Airflow start
 - Dépondant de votre session il faudra sois move mes credetials d'api kaggle qui sont dans mon dossier projet/data soit en faire pour vous et deplacer le kaggle.json vers /home/hadoop/.kaggle/ (modifier hadoop si ce n'est pas votre session)
-- Ensuite quand c'est fait vous pouvez vous connecter sur airflow et lancer manuellement (ou bien attendre l'interval d'un an, oui ç fait beaucoup mais le data sur kaggle se met a jour tous les ans malheureusement) le dag1 qui va automatiquement trigger les autres dags si il est en succes.
+- Ensuite quand c'est fait vous pouvez vous connecter sur airflow et lancer manuellement (ou bien attendre l'interval d'un an, oui ça fait beaucoup mais la data sur kaggle se met a jour tous les ans malheureusement) le dag1 qui va automatiquement trigger les autres dags si il est en succes.
 
 ## Fabriqué avec
 
